@@ -473,7 +473,6 @@ if (!function_exists('fax_split_dtmf')) {
 
 			//field labels
 			$pdf->SetFont($pdf_font, "B", 12);
-			$pdf->Text($x + 0.5, $y + 1.7, strtoupper($text['label-fax_date']).":");
 			$pdf->Text($x + 0.5, $y + 1.7, strtoupper($text['label-sent']).":");
 			if ($fax_recipient != '' || sizeof($fax_numbers) > 0) {
 				$pdf->Text($x + 0.5, $y + 2.0, strtoupper($text['label-fax-recipient']).":");
@@ -490,8 +489,6 @@ if (!function_exists('fax_split_dtmf')) {
 
 			//field values
 			$pdf->SetFont($pdf_font, "", 12);
-			$pdf->SetXY($x + 2.0, $y + 1.65);
-			$pdf->Write(0.3, date("F j, Y g:i A"));
 			$pdf->SetXY($x + 2.0, $y + 1.65);
 			if ($_REQUEST['submit'] != '' && $_REQUEST['submit'] != 'preview') {
 				$time_zone = isset($_SESSION['domain']['time_zone']['name']) ? $_SESSION['domain']['time_zone']['name'] : date_default_timezone_get();
